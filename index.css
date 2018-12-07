@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 1rem;
+}
+
+html {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.site-wrapper {
+  background-color: #c14d78;
+  display: flex;
+  min-height: 100vh;
+  padding: 100px 80px;
+}
+
+.thanos-img__wrapper {
+  margin: 0 auto;
+  height: 600px;
+  width: 600px;
+  position: relative;
+  box-shadow: 6px 5px 20px 0px rgba(0,0,0,0.75);
+}
+
+.thanos-img__wrapper:hover,
+.thanos-img__wrapper:focus {
+  cursor: pointer;
+}
+
+.fade-in-out {
+  animation: fadeInOut 1s;
+}
+
+.thanos-img__overlay::before {
+  filter: blur(60px);
+  content: '';
+  opacity: 0.8;
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgb(193, 77, 120);
+  z-index: -1;
+}
+
+.thanos-img__overlay {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 125px;
+  padding: 1.5em;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.thanos-img__icon {
+  width: 60px;
+}
+
+.thanos-img__info-wrapper {
+  max-width: 70%;
+}
+
+.thanos-img__name {
+  color: #fdfdfd;
+  text-transform: capitalize;
+  margin-bottom: 0.25em;
+}
+
+.thanos-img__quote {
+  color: #ccc;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+}
